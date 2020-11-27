@@ -17,7 +17,6 @@ rightArrow.click(function() {
     var activeItem = $('img.active, i.active');
     activeItem.removeClass('active').next().addClass('active');
 });
-
 var leftArrow = $('.prev i');
 leftArrow.click(function() {
     var activeItem = $('img.active, i.active');
