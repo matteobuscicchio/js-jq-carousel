@@ -12,21 +12,14 @@
 // Consiglio del giorno:
 // Come sempre è importante usare la documentazione di jQuery per scoprire/rinfrescare memoria sulle funzioni che potrebbero esserci utili.
 
-var leftArrow = $('.prev i');
-leftArrow.click(function() {
-    var activeImg = $('img.active, i.active');
-    activeImg.prev().addClass('active');
-    activeImg.removeClass('active');
-
-    if (acvtiveImg) {
-        
-    }
-    
-});
-
 var rightArrow = $('.next i');
 rightArrow.click(function() {
-       var activeImg = $('img.active, i.active');
-    activeImg.next().addClass('active');
-    activeImg.removeClass('active');
+    var activeItem = $('img.active, i.active');
+    activeItem.removeClass('active').next().addClass('active');
+});
+
+var leftArrow = $('.prev i');
+leftArrow.click(function() {
+    var activeItem = $('img.active, i.active');
+    activeItem.removeClass('active').prev().addClass('active');
 });
