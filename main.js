@@ -13,23 +13,34 @@
 // Come sempre è importante usare la documentazione di jQuery per scoprire/rinfrescare memoria sulle funzioni che potrebbero esserci utili.
 
 $(document).ready(function(){
-    var round = 0;
+    /**
+     * Regola il funzionamento della freccetta destra.
+     * 
+     * Ad ogni click verifica che l'elemento mostrato abbia la classe ".last", e permette al ciclo di ricominciare.
+     */
     var rightArrow = $('.next i');
     rightArrow.click(function() {
+        firstItem = $('img.first, i.first');
         var activeItem = $('img.active, i.active');
         if (activeItem.hasClass('last')) {
             activeItem.removeClass('active');
-            $('img.first, i.first').addClass('active');
+            firstItem.addClass('active');
         } else {
             activeItem.removeClass('active').next().addClass('active');
         }
     });
+    /**
+     * Regola il funzionamento della frecceta sinistra.
+     * 
+     * Ad ogni click verifica che l'elemento mostrato abbia la classe ".first", e permette al ciclo di ricominciare.
+     */
     var leftArrow = $('.prev i');
     leftArrow.click(function() {
+        var lastItem = $('img.last, i.last');
         var activeItem = $('img.active, i.active');
         if (activeItem.hasClass('first')) {
             activeItem.removeClass('active');
-            $('img.last, i.last').addClass('active');
+            lastItem.addClass('active');
         } else {
             activeItem.removeClass('active').prev().addClass('active');
         }
