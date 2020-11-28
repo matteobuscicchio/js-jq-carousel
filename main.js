@@ -45,4 +45,17 @@ $(document).ready(function(){
             activeItem.removeClass('active').prev().addClass('active');
         }
     });
+    /**
+     * Abilita l'uso delle frecce detta tastiera.
+     */
+    onkeydown = function(ev) {
+        if (ev.keyCode == 37) {
+            leftArrow.click();
+        } else if (ev.keyCode == 39) {
+            rightArrow.click();
+        } else {
+            console.log('usa le frecce "destra" e "dinistra" per navigare tra le immagini');
+        }
+        console.log(ev);
+    };
 });
